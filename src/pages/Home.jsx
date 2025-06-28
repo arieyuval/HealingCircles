@@ -33,7 +33,7 @@ export default function Home() {
               <Users className="mx-auto text-green-500 w-8 h-8" />
               <h3 className="mt-2 font-semibold">Facilitated Groups</h3>
               <p className="text-sm text-muted-foreground">
-                Guided circles led by trained facilitators in a structured, supportive environment
+                Guided circles led by therapists and mediators in a structured, supportive environment
               </p>
             </div>
             <div className="text-center">
@@ -58,9 +58,7 @@ export default function Home() {
           invited to process <span className="text-green-600 font-medium">grief</span>,{' '}
           <span className="text-green-600 font-medium">anxiety</span>, and{' '}
           <span className="text-green-600 font-medium">identity</span> in a
-          compassionate, non-judgmental space. These groups are open to anyone
-          affected by the crisis — directly or indirectly — and meet weekly in a
-          guided, emotionally safe environment.
+          compassionate, non-judgmental space. This will not be a debate but a chance to share, to witness and be heard, a space where everyone's voice matters and silence is welcome too. Together we will listen with compassion, speak with honesty, and hold each other with care. We are trained therapists, mediators, and healers offering heart-centered approaches for navigating sensitive discussions.
         </p>
       </div>
 
