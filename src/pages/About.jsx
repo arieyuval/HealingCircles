@@ -114,9 +114,9 @@ export default function AboutPage() {
                     <Button 
                       onClick={() => window.open(member.link, '_blank')}
                       variant="outline"
-                      className="mt-auto w-full bg-gradient-to-r from-stone-50 to-white hover:from-white hover:to-stone-50 border-stone-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                      className="mt-auto w-full py-3 text-base bg-gradient-to-r from-stone-50 to-white hover:from-white hover:to-stone-50 border-stone-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                     >
-                      Learn More <LinkIcon className="w-4 h-4 ml-2" />
+                      Learn More
                     </Button>
                   )}
                 </CardContent>
