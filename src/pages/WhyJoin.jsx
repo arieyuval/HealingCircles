@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { HeartCrack, Users, Search, CheckCircle, Calendar, Feather, Mail } from 'lucide-react';
+import { HeartCrack, Users, Search, Feather, Mail } from 'lucide-react';
 
 const whoBenefits = [
   {
@@ -19,6 +19,14 @@ const whoBenefits = [
 ];
 
 export default function WhyJoinPage() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("healingtogethercircles@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-stone-50 to-amber-100/50">
       <div className="px-4 py-16 md:py-24 relative overflow-hidden">
@@ -88,48 +96,22 @@ export default function WhyJoinPage() {
           </p>
         </section>
 
-        {/* Call to Action & Contact */}
+        {/* Unified Call to Action */}
         <section className="px-4 py-16 relative z-10">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            <div className="flex flex-col justify-between bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-emerald-100/50 text-center">
-              <div>
-                <div className="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-                  <Calendar className="w-10 h-10 text-white" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-medium text-stone-800 mb-4">
-                  Learn More in a Private Call
-                </h2>
-                <p className="text-stone-600 mb-8 leading-relaxed">
-                  Your journey is unique. Let's talk about how our circles can support you.
-                </p>
-              </div>
-              <Button
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-xl transition-all duration-300"
-                onClick={() => window.open('https://calendly.com/healingtogethercircle/30min?month=2025-06', '_blank')}
-              >
-                Book Your Call
-              </Button>
-            </div>
-
-            <div className="flex flex-col justify-between bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-emerald-100/50 text-center">
-              <div>
-                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-                  <Mail className="w-10 h-10 text-emerald-600" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-medium text-stone-800 mb-12">
-                  Prefer to Email?
-                </h2>
-                <p className="text-stone-600 mb-8 leading-relaxed">
-                  Reach out directly with any questions or if you’re unsure if this space is right for you.
-                </p>
-              </div>
-              <Button
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-xl transition-all duration-300"
-                onClick={() => window.location.href = 'mailto:healingtogethercircles@gmail.com'}
-              >
-                Send an Email
-              </Button>
-            </div>
+          <div className="max-w-2xl mx-auto bg-white/90 backdrop-blur-sm rounded-3xl p-10 text-center shadow-2xl border border-emerald-100/50">
+            <Mail className="mx-auto text-emerald-600 w-10 h-10 mb-4" />
+            <h2 className="text-2xl md:text-3xl font-medium text-stone-800 mb-4">
+              Reach Out to Learn More
+            </h2>
+            <p className="text-stone-600 mb-6 leading-relaxed">
+              Email us with any questions or to find out if Healing Circles are right for you.
+            </p>
+            <Button
+              onClick={handleCopyEmail}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-xl transition-all duration-300"
+            >
+              {copied ? "Email Copied ✅" : "Copy Our Email"}
+            </Button>
           </div>
         </section>
       </div>
@@ -137,7 +119,7 @@ export default function WhyJoinPage() {
       <footer className="text-center text-sm text-muted-foreground mt-16 pb-8 space-y-2">
         <div>© 2025 Healing Together. Creating spaces for compassionate healing and connection.</div>
         <div>
-          Questions? Email us at{' '}
+          Questions? Email us at{" "}
           <a
             href="mailto:healingtogethercircles@gmail.com"
             className="text-emerald-700 underline font-medium"

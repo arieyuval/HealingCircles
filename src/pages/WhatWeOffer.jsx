@@ -1,9 +1,17 @@
-import React from "react";
-import { CalendarCheck, Heart, MessageSquare, Shield, Users } from "lucide-react";
+import React, { useState } from "react";
+import { MessageSquareHeart, Heart, MessageSquare, Shield, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function WhatWeOffer() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("healingtogethercircles@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 text-gray-800">
       <div className="transform scale-[0.90] origin-top mx-auto max-w-screen-2xl">
@@ -94,7 +102,7 @@ export default function WhatWeOffer() {
             <CardContent className="p-6">
               <h3 className="font-semibold text-lg">Weekly Online Pilot Group</h3>
               <p className="mt-2 text-gray-700">
-                The program will begin as a weekly online pilot group, allowing for accessibility and connection across
+                The program will begin as a series of four weekly online meetings, allowing for accessibility and connection across
                 different locations. This provides a safe and consistent virtual space to build community and trust.
               </p>
             </CardContent>
@@ -113,19 +121,20 @@ export default function WhatWeOffer() {
           </Card>
         </div>
 
-        {/* CTA */}
+        {/* Replaced CTA Section */}
         <div className="flex justify-center px-4 mt-40 w-full max-w-6xl mx-auto">
           <Card className="bg-green-50 shadow-lg rounded-xl w-full text-center">
             <CardContent className="p-8">
-              <CalendarCheck className="mx-auto text-green-600 w-10 h-10 mb-4" />
-              <h3 className="text-xl font-semibold">Take the First Step</h3>
+              <MessageSquareHeart className="mx-auto text-green-600 w-10 h-10 mb-4" />
+              <h3 className="text-xl font-semibold">Want to Join a Circle?</h3>
               <p className="mt-2 text-muted-foreground">
-                Schedule a private, no-obligation call to learn more and see if our Healing Circles are right for you.
+                Reach out by email and we’ll get back to you with group details.
               </p>
-              <Button className="mt-4 px-6 py-2 text-base font-semibold rounded-full bg-green-600 hover:bg-green-700 text-white shadow-md" asChild>
-                <a href="https://calendly.com/craftpnw/intro" target="_blank" rel="noopener noreferrer">
-                  Book Your Call
-                </a>
+              <Button
+                onClick={handleCopyEmail}
+                className="mt-4 px-6 py-2 text-base font-semibold rounded-full bg-green-600 hover:bg-green-700 text-white shadow-md"
+              >
+                {copied ? "Email Copied ✅" : "Copy Our Email"}
               </Button>
             </CardContent>
           </Card>

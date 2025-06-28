@@ -43,7 +43,7 @@ export default function Layout({ children }) {
                   </Button>
                 </Link>
               ))}
-              <Button
+              {/* <Button
                 className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full font-medium shadow-sm hover:shadow-md"
                 onClick={() =>
                   window.open(
@@ -53,7 +53,7 @@ export default function Layout({ children }) {
                 }
               >
                 Book a Call
-              </Button>
+              </Button> */}
             </div>
           </div>
         </nav>

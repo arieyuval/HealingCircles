@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { CalendarHeart, HeartCrack, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("healingtogethercircles@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 px-6 sm:px-14 text-base scale-[1.10]">
       {/* Section 1: Logo and Taglines */}
@@ -55,26 +63,27 @@ export default function Home() {
 
         <p className="max-w-3xl text-center text-muted-foreground">
           Healing Together runs facilitated support groups where participants are
-          invited to process <span className="text-green-600 font-medium">grief</span>,{' '}
-          <span className="text-green-600 font-medium">anxiety</span>, and{' '}
-          <span className="text-green-600 font-medium">identity</span> in a
-          compassionate, non-judgmental space. This will not be a debate but a chance to share, to witness and be heard, a space where everyone's voice matters and silence is welcome too. Together we will listen with compassion, speak with honesty, and hold each other with care. We are trained therapists, mediators, and healers offering heart-centered approaches for navigating sensitive discussions.
+          invited to process <span className="text-green-600 font-medium">grief</span>,{" "}
+          <span className="text-green-600 font-medium">anxiety</span>, and{" "}
+          <span className="text-green-600 font-medium">identity</span>{" "}
+          in a compassionate, non-judgmental space. This will not be a debate but a chance to share, to witness and be heard, a space where everyone's voice matters and silence is welcome too. Together we will listen with compassion, speak with honesty, and hold each other with care. We are trained therapists, mediators, and healers offering heart-centered approaches for navigating sensitive discussions.
         </p>
       </div>
 
-      {/* Section 3: Book Call CTA + Footer */}
+      {/* Section 3: CTA + Note + Footer */}
       <div className="px-4 pt-16 pb-40 flex flex-col items-center">
         <Card className="max-w-xl w-full">
           <CardContent className="p-8 text-center">
             <CalendarHeart className="mx-auto text-green-600 w-10 h-10 mb-4" />
             <h3 className="text-xl font-semibold">Ready to Begin Your Healing Journey?</h3>
             <p className="text-muted-foreground mt-2">
-              Schedule a 30-minute call to learn more about our support groups and find the right circle for you.
+              Click below to copy our email address and reach out to us directly.
             </p>
-            <Button className="mt-4 px-6 py-2 text-base font-semibold rounded-full bg-green-600 hover:bg-green-700 text-white shadow-md" asChild>
-              <a href="https://calendly.com/craftpnw/intro" target="_blank" rel="noopener noreferrer">
-                Book Your Call
-              </a>
+            <Button
+              onClick={handleCopyEmail}
+              className="mt-4 px-6 py-2 text-base font-semibold rounded-full bg-green-600 hover:bg-green-700 text-white shadow-md"
+            >
+              {copied ? "Email Copied ✅" : "Email Us"}
             </Button>
           </CardContent>
         </Card>
@@ -93,23 +102,19 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-        
-        {/* <footer className="text-center text-xs text-muted-foreground mt-6 pb-6">
-          © 2025 Healing Together. Creating spaces for compassionate healing and connection.
-        </footer> */}
-        <footer className="text-center text-sm text-muted-foreground mt-16 pb-8 space-y-2">
-  <div>© 2025 Healing Together. Creating spaces for compassionate healing and connection.</div>
-  <div>
-    Questions? Email us at{" "}
-    <a
-      href="mailto:healingtogethercircles@gmail.com"
-      className="text-emerald-700 underline font-medium"
-    >
-      healingtogethercircles@gmail.com
-    </a>
-  </div>
-</footer>
 
+        <footer className="text-center text-sm text-muted-foreground mt-16 pb-8 space-y-2">
+          <div>© 2025 Healing Together. Creating spaces for compassionate healing and connection.</div>
+          <div>
+            Questions? Email us at{" "}
+            <a
+              href="mailto:healingtogethercircles@gmail.com"
+              className="text-emerald-700 underline font-medium"
+            >
+              healingtogethercircles@gmail.com
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   );
