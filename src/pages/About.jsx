@@ -11,7 +11,7 @@ const teamMembers = [
     link: 'https://www.craftpnw.com/miri-arie-phd',
   },
   {
-    name: 'Dorit Cypis',
+    name: 'Dorit Cypis, MFA',
     image: '/Dorit.PNG',
     bio: `An artist, educator, and conflict mediator, Dorit was born in Israel in the early 1950s to a family from Poland and Ukraine. She immigrated to Montreal, Canada in 1959, and to the USA in 1975. She completed an MFA at California Institute of the Arts and a Masters of Dispute Resolution at Pepperdine University. Dorit founded PeoplesLab in 2016 with a psycho-social approach, integrating perceptual, pedagogical and communication tools to meet identity, difference and conflict as opportunity for possibility and change. PeoplesLab services include training, mediation, and dialogue facilitation. Dorit has exhibited at many museums and maintains a studio practice.`,
     link: 'https://www.peopleslab.us/',
@@ -47,7 +47,7 @@ const teamMembers = [
     link: null, 
   },
   {
-    name: 'Karen Ross',
+    name: 'Karen Ross, PhD',
     image: '/Karen.jpg',
     bio: `Karen Ross is a longtime dialogue facilitator & trainer, and a teacher and researcher of grassroots peacebuilding, restorative justice, and conflict resolution processes.  Born in Israel, Karen grew up in both Israel and the US and has participated in dialogue and peace education initiatives since she was a teenager.  Karen currently is an Associate Professor at UMass Boston, where she teaches conflict resolution and research methodology courses; she is also an Associate at Essential Partners, a group that works with communities and organizations by using dialogue to help shift relationships and build trust.`,
     link: null, 
