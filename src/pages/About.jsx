@@ -45,6 +45,12 @@ const teamMembers = [
     image: '/Jonathan.jpg',
     bio: `Jonathan is a licensed clinical psychologist and Director of the Center for the Science of Social Connection of the University of Washington. He is an American Jew, born in Brooklyn, NY who has lived on both coasts and in the Midwest. His Center’s research has included studying and intervening on racism and bias, how to improve client-therapist relationships, and how to improve social connections across the differences that often divide us, such as race, religion, and political ideology. Dr. Kanter has published over 100 scientific articles on these and other topics and he is regularly invited to give talks and workshops nationally and internationally. Currently Jonathan also directs the EDI training efforts for UW Medicine’s Office of Healthcare Equity and provides training and consultation on issues of bias and racism for healthcare systems, clinical, legal, higher education, and other organizational settings.`,
     link: null, 
+  },
+  {
+    name: 'Karen Ross',
+    image: '/Karen.jpg',
+    bio: `Karen Ross is a longtime dialogue facilitator & trainer, and a teacher and researcher of grassroots peacebuilding, restorative justice, and conflict resolution processes.  Born in Israel, Karen grew up in both Israel and the US and has participated in dialogue and peace education initiatives since she was a teenager.  Karen currently is an Associate Professor at UMass Boston, where she teaches conflict resolution and research methodology courses; she is also an Associate at Essential Partners, a group that works with communities and organizations by using dialogue to help shift relationships and build trust.`,
+    link: null, 
   }
 ];
 
