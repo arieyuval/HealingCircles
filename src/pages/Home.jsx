@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 px-6 sm:px-14 text-base scale-[1.10]">
       {/* Top Banner: First Meeting Announcement */}
-      <div className="max-w-4xl mx-auto mt-32 mb-12 px-6">
+      <div className="max-w-4xl mx-auto mt-36 mb-12 px-6">
         <div className="bg-green-100/70 border border-green-300 rounded-xl shadow-md px-6 py-5 text-center">
           <h2 className="text-lg md:text-xl font-semibold text-green-800 mb-2">
             📅 First Healing Circle — Friday, July 4 @ 9:00am PT (on Zoom)
