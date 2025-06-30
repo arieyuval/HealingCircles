@@ -40,6 +40,12 @@ const teamMembers = [
     bio: `A native Californian raised in the reform Jewish movement, he has become increasingly aware of the absence of Palestinian history and perspectives during his youth and now gravitates toward safe spaces designed for mutual understanding. As an anti-occupation advocate with several Israeli and Palestinian friends, he recognizes the importance of emotional grounding and facilitated dialogue to generate compassion for marginalized voices. When not advocating for empathy, Jerome enjoys swimming in the ocean, playing with his cat Bongo, and exploring nature with his wife and son.`,
     link: null,
   },
+  {
+    name: 'Jonathan Kanter, PhD',
+    image: '/Jonathan.jpg',
+    bio: `Jonathan is a licensed clinical psychologist and Director of the Center for the Science of Social Connection of the University of Washington. He is an American Jew, born in Brooklyn, NY who has lived on both coasts and in the Midwest. His Center’s research has included studying and intervening on racism and bias, how to improve client-therapist relationships, and how to improve social connections across the differences that often divide us, such as race, religion, and political ideology. Dr. Kanter has published over 100 scientific articles on these and other topics and he is regularly invited to give talks and workshops nationally and internationally. Currently Jonathan also directs the EDI training efforts for UW Medicine’s Office of Healthcare Equity and provides training and consultation on issues of bias and racism for healthcare systems, clinical, legal, higher education, and other organizational settings.`,
+    link: null, 
+  }
 ];
 
 export default function AboutPage() {
