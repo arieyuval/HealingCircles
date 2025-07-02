@@ -1,5 +1,4 @@
 import React from "react";
-import { Analytics } from "@vercel/analytics/next"
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -60,7 +59,6 @@ export default function Layout({ children }) {
         </nav>
       </header>
       <main className="flex-grow">{children}</main>
-      <Analytics />
     </div>
   );
 }
