@@ -60,6 +60,7 @@ export default function Layout({ children }) {
         </nav>
       </header>
       <main className="flex-grow">{children}</main>
+      <Analytics />
     </div>
   );
 }
