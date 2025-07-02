@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/next"
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
