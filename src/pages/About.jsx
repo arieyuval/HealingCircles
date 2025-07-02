@@ -51,6 +51,12 @@ const teamMembers = [
     image: '/Karen.jpg',
     bio: `Karen Ross is a longtime dialogue facilitator & trainer, and a teacher and researcher of grassroots peacebuilding, restorative justice, and conflict resolution processes.  Born in Israel, Karen grew up in both Israel and the US and has participated in dialogue and peace education initiatives since she was a teenager.  Karen currently is an Associate Professor at UMass Boston, where she teaches conflict resolution and research methodology courses; she is also an Associate at Essential Partners, a group that works with communities and organizations by using dialogue to help shift relationships and build trust.`,
     link: null, 
+  },
+  {
+    name: 'Jeffrey Gillman, PhD',
+    image: '/JeffreyGillman.jpg',
+    bio: `Jeff’s most meaningful roles are husband, father, and doting grandfather.  He loves the peace of sharing sunrises and shoreline sunsets with his “bashert", and the magical joy of taking his grandchildren on adventures.  Jeff grew up in the Midwest, in a family that lived by two central tenets of Judaism:  1) Each person is born in the image of the divine, and 2) Each person has the capacity and the responsibility to contribute to and care for the well-being of humanity and the world we inhabit.  Jeff is a Fellowship-trained Clinical and Pediatric Psychologist who has been privileged to work with children, adolescents, adults, and families for the past 40 years.  He has served on the faculty of several university teaching hospitals, where he developed and directed an inpatient consultation-liaison program, as well as an outpatient program for adolescents and families coping with eating disorders.  For the last 20 years, he has been in private practice, providing developmentally informed, cognitive-behavioral, mindfulness-based, and integrative psychotherapies to individuals and families who are dealing with health-related issues, traumatic events, and life transitions.  In his spare time, he has served on community boards, provided volunteer services to military veterans, and contributed to disaster relief efforts.`,
+    link: null, 
   }
 ];
 
