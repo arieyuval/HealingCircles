@@ -122,7 +122,7 @@
 //     </div>
 //   );
 // }
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CalendarHeart, HeartCrack, ShieldCheck, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -136,6 +136,31 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [eventCopied, setEventCopied] = useState(false);
   const [showAnnouncement, setShowAnnouncement] = useState(true);
+
+  // Offset banner so it never covers a fixed header/nav
+  const [headerOffset, setHeaderOffset] = useState(64); // sane default ~4rem
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const headerEl = document.querySelector('header, [data-site-header]');
+    const compute = () => {
+      const h = headerEl ? headerEl.getBoundingClientRect().height : 0;
+      // add a small gap
+      setHeaderOffset((h || 0) + 8);
+    };
+    compute();
+
+    let ro;
+    if (headerEl && 'ResizeObserver' in window) {
+      ro = new ResizeObserver(compute);
+      ro.observe(headerEl);
+    } else {
+      window.addEventListener('resize', compute);
+    }
+    return () => {
+      if (ro) ro.disconnect();
+      else window.removeEventListener('resize', compute);
+    };
+  }, []);
 
   // Clipboard helper with fallback for older browsers and SSR safety
   const copyToClipboard = async (text) => {
@@ -177,7 +202,7 @@ export default function Home() {
     <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 px-6 sm:px-14 text-base pt-4">
       {/* Top announcement banner (dismissible) */}
       {showAnnouncement && (
-        <div className="sticky top-0 z-50">
+        <div className="sticky z-40" style={{ top: headerOffset }}>
           <div className="mx-auto mt-3 max-w-4xl border border-emerald-700 bg-emerald-600 text-white p-4 rounded-xl shadow-lg">
             <div className="flex items-start gap-3">
               <div className="flex-1 text-sm sm:text-base">
@@ -311,4 +336,5 @@ export default function Home() {
     </div>
   );
 }
+
 
