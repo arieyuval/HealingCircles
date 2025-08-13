@@ -122,8 +122,8 @@
 //     </div>
 //   );
 // }
-import React, { useState, useEffect } from "react";
-import { CalendarHeart, HeartCrack, ShieldCheck, Users, X } from "lucide-react";
+import React, { useState } from "react";
+import { CalendarHeart, HeartCrack, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -135,32 +135,6 @@ export default function Home() {
   // UI state
   const [copied, setCopied] = useState(false);
   const [eventCopied, setEventCopied] = useState(false);
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
-
-  // Offset banner so it never covers a fixed header/nav
-  const [headerOffset, setHeaderOffset] = useState(64); // sane default ~4rem
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const headerEl = document.querySelector('header, [data-site-header]');
-    const compute = () => {
-      const h = headerEl ? headerEl.getBoundingClientRect().height : 0;
-      // add a small gap
-      setHeaderOffset((h || 0) + 8);
-    };
-    compute();
-
-    let ro;
-    if (headerEl && 'ResizeObserver' in window) {
-      ro = new ResizeObserver(compute);
-      ro.observe(headerEl);
-    } else {
-      window.addEventListener('resize', compute);
-    }
-    return () => {
-      if (ro) ro.disconnect();
-      else window.removeEventListener('resize', compute);
-    };
-  }, []);
 
   // Clipboard helper with fallback for older browsers and SSR safety
   const copyToClipboard = async (text) => {
@@ -200,35 +174,22 @@ export default function Home() {
 
   return (
     <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 px-6 sm:px-14 text-base pt-4">
-      {/* Top announcement banner (dismissible) */}
-      {showAnnouncement && (
-        <div className="sticky z-40" style={{ top: headerOffset }}>
-          <div className="mx-auto mt-3 max-w-4xl border border-emerald-700 bg-emerald-600 text-white p-4 rounded-xl shadow-lg">
-            <div className="flex items-start gap-3">
-              <div className="flex-1 text-sm sm:text-base">
-                <strong>Upcoming Circle:</strong> Join us virtually in a new Healing Circle <span className="font-semibold">September 9th at 5PM PST / 8PM EST</span>. To learn more and get the Zoom link please reach out to{" "}
-                <a href={`mailto:${EVENT_EMAIL}`} className="underline">{EVENT_EMAIL}</a>.
-              </div>
-              <button
-                aria-label="Dismiss announcement"
-                onClick={() => setShowAnnouncement(false)}
-                className="shrink-0 rounded-md hover:bg-emerald-700/40 p-1"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-            <div className="mt-3 flex justify-center">
-              <Button
-                onClick={handleCopyEventEmail}
-                className="rounded-full px-5 py-2 bg-white/15 hover:bg-white/25 text-white font-medium backdrop-blur-sm border border-white/30 shadow"
-                aria-live="polite"
-              >
-                {eventCopied ? "Email Copied ✅" : "✉️ Copy email"}
-              </Button>
-            </div>
-          </div>
+      {/* Top announcement banner (non-dismissible, non-overlapping) */}
+      <div className="mx-auto mt-6 mb-4 max-w-4xl border border-emerald-700 bg-emerald-600 text-white p-4 rounded-xl shadow-lg">
+        <div className="text-sm sm:text-base text-center">
+          <strong>Upcoming Circle:</strong> Join us virtually in a new Healing Circle <span className="font-semibold">September 9th at 5PM PST / 8PM EST</span>. To learn more and get the Zoom link please reach out to {" "}
+          <a href={`mailto:${EVENT_EMAIL}`} className="underline">{EVENT_EMAIL}</a>.
         </div>
-      )}
+        <div className="mt-3 flex justify-center">
+          <Button
+            onClick={handleCopyEventEmail}
+            className="rounded-full px-5 py-2 bg-white/15 hover:bg-white/25 text-white font-medium backdrop-blur-sm border border-white/30 shadow"
+            aria-live="polite"
+          >
+            {eventCopied ? "Email Copied ✅" : "✉️ Copy email"}
+          </Button>
+        </div>
+      </div>
 
       {/* Section 1: Logo and Taglines */}
       <div className="flex flex-col items-center justify-center pt-5 pb-14 text-center">
