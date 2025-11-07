@@ -53,7 +53,7 @@ export default function Home() {
       {/* Top announcement banner (non-dismissible, non-overlapping) */}
       <div className="mx-auto mt-6 mb-4 max-w-4xl border border-emerald-700 bg-emerald-600 text-white p-4 rounded-xl shadow-lg">
         <div className="text-sm sm:text-base text-center">
-          <strong>Upcoming Circle:</strong> Join us virtually in our upcoming Healing Circles: <span className="font-semibold">September 14th at 8PM EST / 5PM PST and September 28th at 12PM EST / 9AM PST</span>. To learn more and get the Zoom link please reach out to {" "}
+          <strong>Upcoming Circle:</strong> Join us virtually in our upcoming Healing Circles: <span className="font-semibold">Saturday November 23rd, 9 - 10:30am PT, 12 - 1:30pm ET</span>. We'll explore simple tools for navigating challenging topics without losing your cool  or relationships. To learn more and get the Zoom link please reach out to {" "}
           <a href={`mailto:${EVENT_EMAIL}`} className="underline">{EVENT_EMAIL}</a>.
         </div>
         <div className="mt-3 flex justify-center">
