@@ -48,25 +48,43 @@ export default function Home() {
     });
   };
 
+  // return (
+  //   <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 px-6 sm:px-14 text-base pt-4">
+  //     {/* Top announcement banner (non-dismissible, non-overlapping) */}
+  //     <div className="mx-auto mt-6 mb-4 max-w-4xl border border-emerald-700 bg-emerald-600 text-white p-4 rounded-xl shadow-lg">
+  //       <div className="text-sm sm:text-base text-center">
+  //         <strong>Upcoming Circle:</strong> Join us virtually in our upcoming Healing Circles: <span className="font-semibold">Saturday November 23rd, 9 - 10:30am PT, 12 - 1:30pm ET</span>. We'll explore simple tools for navigating challenging topics without losing your cool  or relationships. To register:{" "}
+  //         <a href={`mailto:${EVENT_EMAIL}`} className="underline">{EVENT_EMAIL}</a>.
+  //       </div>
+  //       <div className="mt-3 flex justify-center">
+  //         <Button
+  //           onClick={handleCopyEventEmail}
+  //           className="rounded-full px-5 py-2 bg-white/15 hover:bg-white/25 text-white font-medium backdrop-blur-sm border border-white/30 shadow"
+  //           aria-live="polite"
+  //         >
+  //           {eventCopied ? "Email Copied ✅" : "✉️ Copy email"}
+  //         </Button>
+  //       </div>
+  //     </div>
   return (
     <div className="bg-gradient-to-br from-green-50 via-white to-yellow-50 px-6 sm:px-14 text-base pt-4">
       {/* Top announcement banner (non-dismissible, non-overlapping) */}
       <div className="mx-auto mt-6 mb-4 max-w-4xl border border-emerald-700 bg-emerald-600 text-white p-4 rounded-xl shadow-lg">
         <div className="text-sm sm:text-base text-center">
-          <strong>Upcoming Circle:</strong> Join us virtually in our upcoming Healing Circles: <span className="font-semibold">Saturday November 23rd, 9 - 10:30am PT, 12 - 1:30pm ET</span>. We'll explore simple tools for navigating challenging topics without losing your cool  or relationships. To learn more and get the Zoom link please reach out to {" "}
-          <a href={`mailto:${EVENT_EMAIL}`} className="underline">{EVENT_EMAIL}</a>.
+          <strong>Upcoming Circle:</strong> Join us virtually in our upcoming Healing Circles: <span className="font-semibold">Saturday November 23rd, 9 - 10:30am PT, 12 - 1:30pm ET</span>. We'll explore simple tools for navigating challenging topics without losing your cool  or relationships. To register:{" "}
+          <a href="https://forms.gle/qJTUF64uCufeKWLj7" className="underline" target="_blank" rel="noopener noreferrer">click here</a>.
         </div>
         <div className="mt-3 flex justify-center">
           <Button
-            onClick={handleCopyEventEmail}
+            onClick={() => window.open('https://forms.gle/qJTUF64uCufeKWLj7', '_blank')}
             className="rounded-full px-5 py-2 bg-white/15 hover:bg-white/25 text-white font-medium backdrop-blur-sm border border-white/30 shadow"
             aria-live="polite"
           >
-            {eventCopied ? "Email Copied ✅" : "✉️ Copy email"}
+            📝 Register Now
           </Button>
         </div>
       </div>
-
+     
       {/* Section 1: Logo and Taglines */}
       <div className="flex flex-col items-center justify-center pt-5 pb-14 text-center">
         <img
