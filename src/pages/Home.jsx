@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   // Emails
-  const DEFAULT_EMAIL = "healingtogethercircles@gmail.com"; // existing general email
-  const EVENT_EMAIL = "healingtogethercircle@gmail.com"; // announcement-specific email
+  const DEFAULT_EMAIL = "email.healingtogether@gmail.com"; // existing general email
+  const EVENT_EMAIL = "email.healingtogether@gmail.com"; // announcement-specific email
 
   // UI state
   const [copied, setCopied] = useState(false);

@@ -7,7 +7,7 @@ export default function WhatWeOffer() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("healingtogethercircles@gmail.com");
+    navigator.clipboard.writeText("email.healingtogether@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -146,10 +146,10 @@ export default function WhatWeOffer() {
           <div>
             Questions? Email us at{" "}
             <a
-              href="mailto:healingtogethercircles@gmail.com"
+              href="mailto:email.healingtogether@gmail.com"
               className="text-emerald-700 underline font-medium"
             >
-              healingtogethercircles@gmail.com
+              email.healingtogether@gmail.com
             </a>
           </div>
         </footer>

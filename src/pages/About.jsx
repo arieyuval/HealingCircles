@@ -150,10 +150,10 @@ export default function AboutPage() {
   <div>
     Questions? Email us at{" "}
     <a
-      href="mailto:healingtogethercircles@gmail.com"
+      href="mailto:email.healingtogether@gmail.com"
       className="text-emerald-700 underline font-medium"
     >
-      healingtogethercircles@gmail.com
+      email.healingtogether@gmail.com
     </a>
   </div>
 </footer>
